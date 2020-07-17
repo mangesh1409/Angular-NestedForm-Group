@@ -19,18 +19,24 @@ export class AppComponent {
       state: new FormControl(''),
     })
   });
-  Submitdata(){
-      console.log(this.profileForm.value);
+ Submitdata(){
+      // console.log(this.profileForm);
+      // console.log(this.profileForm.value);
       this.data = this.profileForm.value;
+      console.log(this.profileForm.get('nfgname').value);
+      console.log(this.profileForm.controls.nfgemail.value);
+      console.log(this.profileForm.get('nfgaddress.street').value);
+      console.log(this.profileForm.get('nfgaddress.city').value);
+      console.log(this.profileForm.get('nfgaddress.state').value);
   }
   updateProfile() {
     this.profileForm.patchValue({
       nfgname: 'Rohan',
       nfgemail: '234@gmail.com',
       nfgaddress: {
-        street: '123 Drew Street',
+        street: 'Joshi Road',
         city: 'Mumbai',
-        zip: 400094
+        state: 'Maharashtra'
       }
     });
   }
